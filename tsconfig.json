@@ -10,7 +10,10 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "lib": ["ES2020"]
+    "paths": {
+      "*": ["./src/*"]
+    },
+    "lib": ["ES2020", "DOM"]
   },
   "ts-node": {
     "compilerOptions": {
