@@ -3,6 +3,7 @@ import {FC, useState} from 'react';
 import {classNames} from "shared/lib";
 import {ThemeSwitcher} from "features/ThemeSwitcher";
 import classes from './Sidebar.module.scss';
+import {LangSwitcher} from "features/LangSwitcher";
 
 interface IProps {
     className?: string;
@@ -20,6 +21,7 @@ export const Sidebar: FC<IProps> = ({ className }) => {
             <button onClick={handleToggle}>toggle</button>
             <div className={classes.switchers}>
                 <ThemeSwitcher />
+                <LangSwitcher />
             </div>
         </div>
     );
