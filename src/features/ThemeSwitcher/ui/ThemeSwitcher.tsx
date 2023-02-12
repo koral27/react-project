@@ -1,26 +1,26 @@
-import {FC} from 'react';
+import { FC } from 'react';
 
-import {classNames} from "shared/lib";
-import {Theme, useTheme} from "app/providers/ThemeProvider";
-import classes from './ThemeSwitcher.module.scss';
+import { classNames } from 'shared/lib';
+import { Theme, useTheme } from 'app/providers/ThemeProvider';
 import LightIcon from 'shared/assets/icons/theme-light.svg';
 import DarkIcon from 'shared/assets/icons/theme-dark.svg';
-import {Button, ButtonTheme} from "shared/ui/Button/Button";
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import classes from './ThemeSwitcher.module.scss';
 
 interface IProps {
     className?: string;
 }
 
 export const ThemeSwitcher: FC<IProps> = ({ className }) => {
-    const { theme, toggleTheme } = useTheme();
+	const { theme, toggleTheme } = useTheme();
 
-    return (
-        <Button
-            theme={ButtonTheme.CLEAR}
-            className={classNames(classes.themeSwitcher, {}, [className])}
-            onClick={toggleTheme}
-        >
-            {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
-        </Button>
-    );
+	return (
+		<Button
+			theme={ButtonTheme.CLEAR}
+			className={classNames(classes.themeSwitcher, {}, [className])}
+			onClick={toggleTheme}
+		>
+			{theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
+		</Button>
+	);
 };

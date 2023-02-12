@@ -1,28 +1,29 @@
-import {FC, useState} from 'react';
+import { FC, useState } from 'react';
 
-import {classNames} from "shared/lib";
-import {ThemeSwitcher} from "features/ThemeSwitcher";
+import { classNames } from 'shared/lib';
+import { ThemeSwitcher } from 'features/ThemeSwitcher';
+import { LangSwitcher } from 'features/LangSwitcher';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import classes from './Sidebar.module.scss';
-import {LangSwitcher} from "features/LangSwitcher";
 
 interface IProps {
     className?: string;
 }
 
 export const Sidebar: FC<IProps> = ({ className }) => {
-    const [collapsed, setCollapsed] = useState(false);
+	const [collapsed, setCollapsed] = useState(false);
 
-    const handleToggle = () => {
-        setCollapsed(!collapsed);
-    }
+	const handleToggle = () => {
+		setCollapsed(!collapsed);
+	};
 
-    return (
-        <div className={classNames(classes.sidebar, {[classes.collapsed]: collapsed}, [className])}>
-            <button onClick={handleToggle}>toggle</button>
-            <div className={classes.switchers}>
-                <ThemeSwitcher />
-                <LangSwitcher />
-            </div>
-        </div>
-    );
+	return (
+		<div className={classNames(classes.sidebar, { [classes.collapsed]: collapsed }, [className])}>
+			<Button onClick={handleToggle}>toggle</Button>
+			<div className={classes.switchers}>
+				<ThemeSwitcher />
+				<LangSwitcher />
+			</div>
+		</div>
+	);
 };
