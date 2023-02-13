@@ -8,6 +8,7 @@ module.exports = {
 		'plugin:react/recommended',
 		'plugin:@typescript-eslint/recommended',
 		'airbnb',
+		'plugin:i18next/recommended',
 	],
 	overrides: [
 	],
@@ -19,6 +20,7 @@ module.exports = {
 	plugins: [
 		'react',
 		'@typescript-eslint',
+		'i18next',
 	],
 	rules: {
 		indent: ['error', 'tab'],
@@ -42,6 +44,7 @@ module.exports = {
 		'no-unused-vars': 'warn',
 		'react/jsx-no-constructed-context-values': 'warn',
 		'import/no-extraneous-dependencies': 'warn',
+		'i18next/no-literal-string': ['error', { markupOnly: true }],
 	},
 	globals: {
 		__IS_DEV__: true,
