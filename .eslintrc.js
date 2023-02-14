@@ -2,6 +2,7 @@ module.exports = {
 	env: {
 		browser: true,
 		es2021: true,
+		jest: true,
 	},
 	extends: [
 		'eslint:recommended',
@@ -45,6 +46,7 @@ module.exports = {
 		'react/jsx-no-constructed-context-values': 'warn',
 		'import/no-extraneous-dependencies': 'warn',
 		'i18next/no-literal-string': ['error', { markupOnly: true }],
+		'max-len': ['error', { ignoreComments: true, code: 100 }],
 	},
 	globals: {
 		__IS_DEV__: true,
