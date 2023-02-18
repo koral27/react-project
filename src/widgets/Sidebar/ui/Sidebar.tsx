@@ -18,7 +18,13 @@ export const Sidebar: FC<IProps> = ({ className }) => {
 	};
 
 	return (
-		<div className={classNames(classes.sidebar, { [classes.collapsed]: collapsed }, [className])}>
+		<div
+			className={classNames(
+				classes.sidebar,
+				{ [classes.collapsed]: collapsed },
+				[className],
+			)}
+		>
 			<Button onClick={handleToggle}>toggle</Button>
 			<div className={classes.switchers}>
 				<ThemeSwitcher />
